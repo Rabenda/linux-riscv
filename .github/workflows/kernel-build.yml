@@ -52,7 +52,7 @@ jobs:
               tar -xvf ${toolchain_file_name} -C /opt
               pushd kernel
                 export PATH="/opt/Xuantie-900-gcc-linux-5.10.4-glibc-x86_64-V2.6.1/bin:$PATH"
-                make CROSS_COMPILE=${{ matrix.toolchain_tripe }} ARCH=${ARCH} sophgo_mango_ubuntu_defconfig
+                make CROSS_COMPILE=${{ matrix.toolchain_tripe }} ARCH=${ARCH} sophgo_mango_custom_defconfig
                 if [[ ${{ matrix.name }} = "thead-gcc" ]]; then
                   echo "_xtheadc kernel"
                   echo "CONFIG_THEAD_ISA=y" >> .config
